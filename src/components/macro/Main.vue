@@ -1,7 +1,7 @@
 <template>
     <main>
         <h3>Main</h3>
-        <input type="text">
+        <input type="text" v-model="queryTitle">
         <button @click="search" >Cliccami</button>
     </main>
 </template>
@@ -13,6 +13,7 @@ export default {
     data(){
         return{
             movies: null,
+            queryTitle: ''
         }
     },
     methods:{
@@ -20,7 +21,7 @@ export default {
             axios.get('https://api.themoviedb.org/3/search/movie', {
                 params: {
                 api_key: '73feae1323429ea9ff64f7af3c1599ab',
-                query: 'ritorno',
+                query: this.queryTitle,
                 language:'it-IT'
                 }
             })
