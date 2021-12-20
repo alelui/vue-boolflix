@@ -3,6 +3,12 @@
         <h3>Main</h3>
         <input type="text" v-model="queryTitle">
         <button @click="search" >Cliccami</button>
+        <div v-for="(movie, index) in movies" :key="index">
+            <h2>{{movie.title}}</h2>
+            <p>{{movie.original_title}}</p>
+            <p>{{movie.original_language}}</p>
+            <p>{{movie.vote_average}}</p>
+        </div>
     </main>
 </template>
 
