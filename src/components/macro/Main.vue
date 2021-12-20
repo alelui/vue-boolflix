@@ -5,9 +5,9 @@
         <button @click="search" >Cliccami</button>
         <div v-for="(movie, index) in movies" :key="index">
             <h2>{{movie.title}}</h2>
-            <p>{{movie.original_title}}</p>
-            <p>{{movie.original_language}}</p>
-            <p>{{movie.vote_average}}</p>
+            <p><strong>Original title => </strong>{{movie.original_title}}</p>
+            <p><strong>Original language => </strong>{{movie.original_language}}</p>
+            <p><strong>Vote => </strong>{{movie.vote_average}}</p>
         </div>
     </main>
 </template>
@@ -44,7 +44,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    h3{
-        color: red;
+    h2{
+        color: darkblue;
+    }
+    div{
+        padding: 20px;
     }
 </style>
